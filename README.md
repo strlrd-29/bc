@@ -1,16 +1,49 @@
-# BlockChain
+## TodoList Smart Contract
 
-> This repo is for Blockchain assignements
+> This is a basic Todo List Ethereum smart contract written in Solidity.
 
-### How it will be organized ?
+### Contract Details
 
-- For each assignement there will be an issue where I will be describing the assignement.
-- For each assignement there will be a branch with my solution in it.
-- And also A pull request will be created for the branch where we can discuss my solution.
+The contract stores Todo items in a dynamic array `todos`.
+
+Each Todo item has:
+
+`text` - The text of the todo
+`completed` - A boolean indicating if it's completed
+
+### Functions
+
+The contract exposes the following functions:
+
+```sol
+createTodo(string _text) external
+```
+
+Creates a new Todo by pushing it to the `todos` array
 
 
-### Contact
+```sol
+toggleCompleted(uint _index) external
+```
 
-Email: [ouassim_abdelmalek.ghribi@g.enp.edu.dz](mailto:ouassim_abdelmalek.ghribi@g.enp.edu.dz)
+Toggles the `completed` state of the Todo at the given index
 
-Linkedin: [Ghribi Ouassim Abdelmalek](https://dz.linkedin.com/in/ouassimg)
+```sol
+deleteTodo(uint _index) external
+```
+
+Deletes the Todo from the `todos` array at the given index
+
+```sol
+getAllTodos() external view returns (Todo[] memory)
+```
+
+Returns the entire array of Todos
+
+### Usage
+
+This allows for a basic CRUD todo list stored on the blockchain.
+
+The functions can be called from a Dapp frontend or through something like ethers.js.
+
+Let me know if you have any other questions!
